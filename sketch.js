@@ -885,7 +885,7 @@ function draw()
 		}
 	}
 
-	if(dist(gameChar_x,gameChar_y,flagpole.x_pos,flagpole.y_pos)<70){
+	if(gameChar_x>flagpole.x_pos){
 		flagpole.isReached = true;  //checks if the player has reached the flagpole
 		levelComplete = true;  //marks the level as being completed once the player reaches the flagpole
 	}
