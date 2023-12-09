@@ -962,7 +962,6 @@ function mousePressed(){  //function to make the user move onto the next level o
 	}
 	if(firstTime == true && 392<mouseX && mouseX<632 && 536>mouseY && 436<mouseY){
 		firstTime = false;
-		setup();
 	}
 }
 //-------------------------------------------------------------GENERATIVE FUNCTIONS---------------------------------------------------------------------
