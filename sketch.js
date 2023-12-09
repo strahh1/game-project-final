@@ -26,6 +26,7 @@ var lvlScore = 1;
 var gameScore = 0;
 var totalGameScore = 0;
 var deathCount = 0;
+var highScore = 1;
 //declaring state variables
 var gameOver;
 var levelComplete;
@@ -741,6 +742,7 @@ function draw()
 	text(gameScore+'/'+totalGameScore, 70, 60); //writing out the game score
 	text('Level: '+lvlScore, 40, 110); //writing out the current level
 	text('Deaths: '+deathCount,40,160); //writing out the death count
+	text('High Score: '+highScore,40,210); //writing out the high score
 
 	//--------------------------------------------------------------GAME OVER STATE--------------------------------------------------------------------
 	if(gameOver == true){
@@ -826,9 +828,10 @@ function draw()
 		textSize(40);
 		noStroke();
 		textAlign(LEFT);
-		text('Move Left: A', width/2-230, height-400); 
-		text('Move Right: D', width/2-230, height-350); 
-		text('Dash: Shift', width/2-230, height-300);
+		text('Jump: W', width/2-230, height-400); 
+		text('Move Left: A', width/2-230, height-350); 
+		text('Move Right: D', width/2-230, height-300); 
+		text('Dash: Shift', width/2-230, height-250);
 		textAlign(CENTER);
 		text('Controls', width/2, height-470); 
 		text('Continue', width/2, height-80);  //next level text
@@ -944,6 +947,9 @@ function keyReleased()
 
 function mousePressed(){  //function to make the user move onto the next level or restart the game when they click the prompt
 	if(levelComplete == true && 392<mouseX && mouseX<632 && 536>mouseY && 436<mouseY){
+		if(lvlScore == highScore){
+			highScore++;
+		}
 		lvlScore++;
 		setup();
 	}
